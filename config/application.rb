@@ -17,5 +17,6 @@ module PuperCrm
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+    config.autoload_paths += %W(#{config.root}/lib/modules) # add this line
   end
 end

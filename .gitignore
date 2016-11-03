@@ -21,3 +21,5 @@
 .byebug_history
 
 /config/env_vars.yml
+/config/secrets.yml
+/tmp
