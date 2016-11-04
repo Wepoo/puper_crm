@@ -12,7 +12,8 @@ div.table-responsive
     tbody
       - @offers.each do |offer|
         tr
-          td = offer.id
+          td
+            = link_to offer.id, offer_path(offer.id, offer)
           td = offer.type
           td = offer.agent.name
           td = offer.deal.name

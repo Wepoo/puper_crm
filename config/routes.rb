@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :supplier_deals, only: [:index, :show]
   resources :deals, only: [:new, :create]
   resources :plans, only: [:new, :create]
-  resources :offers, only: [:index, :create] do
+  resources :offers, only: [:index, :show, :create] do
     collection do
       get 'new_for_client'
       get 'new_for_supplier'

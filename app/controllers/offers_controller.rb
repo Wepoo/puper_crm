@@ -1,9 +1,14 @@
 class OffersController < ApplicationController
-
+  include ExcelWorker
   before_action :new_offer, only: [:new_for_client, :new_for_supplier]
 
   def index
     @offers = Offer.includes(:agent, :deal).all
+  end
+
+  def show
+    @result = from_file
+    @client = Worker.find_by(email: @result[:email])
   end
 
   def new_for_client

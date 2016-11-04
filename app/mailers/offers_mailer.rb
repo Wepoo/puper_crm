@@ -1,8 +1,8 @@
 class OffersMailer < ApplicationMailer
-  include Excel_worker
+  include ExcelWorker
 
   def distribute(offer)
-    Excel_worker.make_file (offer)
+    make_file (offer)
     contact_email = offer.agent.contact.email
     attachments['offer.xls'] = { mime_type: 'application/xls', content: File.read('tmp/offer.xls') }
     subject = offer.type

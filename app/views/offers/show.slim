@@ -1,0 +1,17 @@
+h1 Offer
+h3
+  | For 
+  = link_to @client.email, @client
+h2
+  | strategic plan:
+  = @result[:strategic]
+h2
+  | perspect plan:
+  = @result[:perspect]
+h2
+  | operational plan:
+  = @result[:operational]
+- if @result[:current]
+  h2
+    | current plan:
+    = @result[:current]
